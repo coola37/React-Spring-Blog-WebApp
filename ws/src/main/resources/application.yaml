@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    generate-unique-name: false
+server:
+    port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+
+whisper:
+  email:
+    username: haven.orn30@ethereal.email
+    password: ZA9treG2f9HC5FSwH6
+    host: smtp.ethereal.email
+    port: 587
+    from: noreply@whisper.com
+  client:
+    host: http://localhost:5173
+

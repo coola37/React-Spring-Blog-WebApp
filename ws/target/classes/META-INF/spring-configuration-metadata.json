@@ -1,0 +1,55 @@
+{
+  "groups": [
+    {
+      "name": "whisper",
+      "type": "com.whisper.ws.user.configuration.WhisperProperties",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties"
+    },
+    {
+      "name": "whisper.client",
+      "type": "com.whisper.ws.user.configuration.WhisperProperties$Client",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties",
+      "sourceMethod": "getClient()"
+    },
+    {
+      "name": "whisper.email",
+      "type": "com.whisper.ws.user.configuration.WhisperProperties$Email",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties",
+      "sourceMethod": "getEmail()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "whisper.client.host",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Client"
+    },
+    {
+      "name": "whisper.email.from",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Email"
+    },
+    {
+      "name": "whisper.email.host",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Email"
+    },
+    {
+      "name": "whisper.email.password",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Email"
+    },
+    {
+      "name": "whisper.email.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Email",
+      "defaultValue": 0
+    },
+    {
+      "name": "whisper.email.username",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Email"
+    }
+  ],
+  "hints": []
+}
