@@ -6,6 +6,7 @@ import com.whisper.ws.auth.token.Token;
 import com.whisper.ws.user.repository.entity.User;
 import com.whisper.ws.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.Base64;
 
 @Service
+@ConditionalOnProperty(name = "whisper.token-type", havingValue = "basic")
 public class BasicAuthTokenService  implements TokenService {
 
     @Autowired
@@ -31,7 +33,7 @@ public class BasicAuthTokenService  implements TokenService {
     @Override
     public User verifyToken(String authorizationHeader) {
         if(authorizationHeader == null) return null;
-        var base64Encoded = authorizationHeader.split("Basic ")[1];
+        var base64Encoded = authorizationHeader.split(" ")[1];
         var decoded = new String(Base64.getDecoder().decode(base64Encoded));
         var credentials = decoded.split(":");
         var email = credentials[0];
@@ -40,5 +42,10 @@ public class BasicAuthTokenService  implements TokenService {
         if(inDB == null) return null;
         if(!passwordEncoder.matches(password, inDB.getPassword())) return null;
         return inDB;
+    }
+
+    @Override
+    public void logout(String authorizationHeader) {
+
     }
 }

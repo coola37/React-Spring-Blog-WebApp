@@ -73,6 +73,13 @@ public class UserController {
         return new UserDTO(service.updateUser(id, userUpdate));
     }
 
+    @DeleteMapping("/{id}")
+    @PreAuthorize("#id == #currentUser.userId")
+    GenericMessage deleteUser(@PathVariable long id,@AuthenticationPrincipal CurrentUser currentUser){
+        service.deleteUser(id);
+        return new GenericMessage("User has been deleted");
+    }
+
 
     @GetMapping("/get")
     Page<UserDTO> getUsers(Pageable pageable, @AuthenticationPrincipal CurrentUser currentUser ){
@@ -112,6 +119,7 @@ public class UserController {
                 .password(user.getPassword())
                 .activationToken(user.getActivationToken())
                 .active(user.getActive())
+                .image(user.getImage())
                 .build();
     }
 

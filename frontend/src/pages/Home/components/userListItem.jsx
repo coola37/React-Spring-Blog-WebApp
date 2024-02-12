@@ -9,7 +9,7 @@ export function UserListItem({ user }) {
       to={`/user/${user.userId}`}
       style={{ textDecoration: "none" }}
     >
-      <ProfileImg width={30} />
+      <ProfileImg width={30} image={user.image}/>
       <span className="ms-2" />
       {user.username}
     </Link>

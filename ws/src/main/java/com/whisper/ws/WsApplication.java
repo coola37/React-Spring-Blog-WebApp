@@ -27,6 +27,8 @@ public class WsApplication {
 		return new CommandLineRunner() {
 			@Override
 			public void run(String... args) throws Exception {
+				var userInDb = repo.findByEmail("user1@mail.com");
+				if(userInDb != null) return;
 				for(var i=1; i<=25; i++){
 					User user = new User();
 					user.setUsername("user" + i);

@@ -1,5 +1,11 @@
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
   datasource:
+    url: jdbc:h2:file:./dev.db
+    username: sa
+    password: 
     generate-unique-name: false
 server:
     port: 8081
@@ -12,6 +18,8 @@ logging:
 
 
 whisper:
+  storage:
+    root: uploads-dev
   email:
     username: haven.orn30@ethereal.email
     password: ZA9treG2f9HC5FSwH6
@@ -20,4 +28,5 @@ whisper:
     from: noreply@whisper.com
   client:
     host: http://localhost:5173
+  token-type: opaque
 

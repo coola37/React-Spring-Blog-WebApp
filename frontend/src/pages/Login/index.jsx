@@ -6,7 +6,6 @@ import { login as test } from "./api";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginSucces } from "@/shared/state/redux";
-import { setToken } from "@/lib/http";
 
 export function Login() {
   const [email, setEmail] = useState();

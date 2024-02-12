@@ -23,4 +23,6 @@ public interface UserService {
     User findByEmail(String email);
 
     User updateUser(long id, UserUpdate userUpdate);
+
+    void deleteUser(long id);
 }

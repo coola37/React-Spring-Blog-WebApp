@@ -10,7 +10,7 @@ export function User() {
   const { apiProgress, data, error 
   } = useRouteParamApiRequest("id", getUser);
   const user = data?.payload
- 
+  console.log(user);
 
   return (
     <>

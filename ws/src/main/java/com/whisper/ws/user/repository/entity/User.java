@@ -1,5 +1,6 @@
 package com.whisper.ws.user.repository.entity;
 
+import com.whisper.ws.auth.token.Token;
 import com.whisper.ws.user.controller.validation.UniqueEmail;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -8,6 +9,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -27,5 +29,8 @@ public class User {
     String email;
     Boolean active = false;
     String activationToken = UUID.randomUUID().toString();
+    @Lob
     String image;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    List<Token> tokens;
 }

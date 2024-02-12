@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { loadAuthState, storeAuthState } from "./storage";
-import { setToken } from "@/lib/http";
 
 export const AuthContext = createContext();
 
@@ -19,18 +18,14 @@ const authReducer = (authState, action) => {
   console.log(authState)
   switch (action.type) {
     case "login-succes": 
-      setToken(action.data.token);
       return action.data.user;
-    case "logout-succes":
-      setToken();
+    case "logout-success":
       return { userId: 0 };
     case "user-update-success": 
       return {  
         ...authState,
-        username: action.data.username
-        /*email: action.data.email, 
-        image: action.data.image,
-        userId: action.data.userId*/
+        username: action.data.username,
+        image: action.data.image
       };
 
     default:

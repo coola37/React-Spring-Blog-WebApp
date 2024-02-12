@@ -1,6 +1,7 @@
 package com.whisper.ws.user.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,5 +19,6 @@ public class UserResponse {
     private Boolean active;
     @JsonIgnore
     private String activationToken;
+    @Lob
     private String image;
 }

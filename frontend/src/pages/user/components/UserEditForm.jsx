@@ -16,7 +16,12 @@ export function UserEditForm({ setEditMode, setTempImg }) {
 
   const onChangeUsername = (event) => {
     setNewUsername(event.target.value);
-    setErrors({});
+    setErrors(function (lastErrors){
+      return {
+        ...lastErrors,
+        username: undefined,
+      };
+    });
   };
   const onClickCancel = () => {
     setEditMode(false);
@@ -26,6 +31,12 @@ export function UserEditForm({ setEditMode, setTempImg }) {
   };
 
   const onSelectImg = (event) => {
+    setErrors(function (lastErrors){
+      return {
+        ...lastErrors,
+        image: undefined,
+      };
+    });
     if(event.target.files.length < 1) return;
     const file = event.target.files[0];
     const fileReader = new FileReader();
@@ -43,11 +54,11 @@ export function UserEditForm({ setEditMode, setTempImg }) {
     setErrors({});
     setGeneralError();
     try {
-      await updateUser(authState.userId, { username: newUsername, image: newImg });
+      const {data} = await updateUser(authState.userId, { username: newUsername, image: newImg });
       dispatch({
         type: "user-update-success",
         data: {
-          username: newUsername,
+          username: data.username, image: data.image
         },
       });
       setEditMode(false);
@@ -79,6 +90,7 @@ export function UserEditForm({ setEditMode, setTempImg }) {
          label="Profile Image"
          type="file"
          onChange={onSelectImg}
+         error={errors.image}
       />
     
 

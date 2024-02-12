@@ -1,5 +1,6 @@
 package com.whisper.ws.user.service;
 
+import com.whisper.ws.FileService;
 import com.whisper.ws.user.configuration.CurrentUser;
 import com.whisper.ws.user.dto.UserDTO;
 import com.whisper.ws.user.dto.UserUpdate;
@@ -35,6 +36,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     EmailService emailService;
+
+    @Autowired
+    FileService fileService;
 
     @Transactional(rollbackOn = MailException.class)
     @Override
@@ -90,7 +94,23 @@ public class UserServiceImpl implements UserService {
     public User updateUser(long id, UserUpdate userUpdate) {
         User inDB = getUser(id);
         inDB.setUsername(userUpdate.username());
+        if(userUpdate.image() != null){
+            String fileName = fileService.saveBase64StringAsFile(userUpdate.image());
+            fileService.deleteProfileImage(inDB.getImage());
+            inDB.setImage(fileName);
+        }
+
         return repo.save(inDB);
+    }
+
+    @Override
+    public void deleteUser(long id) {
+        User inDb = getUser(id);
+        if(inDb.getImage() != null){
+            fileService.deleteProfileImage(inDb.getImage());
+        }
+
+        repo.deleteById(id);
     }
 
 

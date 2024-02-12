@@ -16,6 +16,12 @@
       "type": "com.whisper.ws.user.configuration.WhisperProperties$Email",
       "sourceType": "com.whisper.ws.user.configuration.WhisperProperties",
       "sourceMethod": "getEmail()"
+    },
+    {
+      "name": "whisper.storage",
+      "type": "com.whisper.ws.user.configuration.WhisperProperties$Storage",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties",
+      "sourceMethod": "getStorage()"
     }
   ],
   "properties": [
@@ -49,6 +55,21 @@
       "name": "whisper.email.username",
       "type": "java.lang.String",
       "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Email"
+    },
+    {
+      "name": "whisper.storage.profile",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Storage"
+    },
+    {
+      "name": "whisper.storage.root",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Storage"
+    },
+    {
+      "name": "whisper.token-type",
+      "type": "java.lang.String",
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties"
     }
   ],
   "hints": []

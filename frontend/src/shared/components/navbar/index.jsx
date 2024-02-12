@@ -1,20 +1,27 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
-import { AuthContext, useAuthDispatch, useAuthState } from "../state/context";
+import { AuthContext, useAuthDispatch, useAuthState } from "../../state/context";
 import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutSucces } from "../state/redux";
-import { ProfileImg } from "./ProfileImg";
+import { logoutSucces } from "../../state/redux";
+import { ProfileImg } from "../ProfileImg";
+import { logout } from "./api";
 
 export function NavBar() {
-  /*const authState = useAuthState();
-  const dispatch = useAuthDispatch();*/
+ 
 
   const authState = useAuthState();
-  const dispatch = useDispatch();
+  const dispatch = useAuthDispatch();
 
-  const onClickLogout = () => {
-    dispatch(logoutSucces());
+  const onClickLogout = async () => {
+    try{
+      await logout();
+    }catch{
+
+    }finally{
+      dispatch({type: 'logout-success'})
+    }
+    
   };
 
   return (
@@ -43,7 +50,7 @@ export function NavBar() {
             <>
               <li className="nav-item">
                 <Link className="nav-link" to={`/user/${authState.userId}`}>
-                  <ProfileImg width={30} />
+                  <ProfileImg width={30} image={authState.image} />
                   <span>{authState.username}</span>
                 </Link>
               </li>
