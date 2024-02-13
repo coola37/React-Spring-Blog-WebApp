@@ -28,5 +28,5 @@ whisper:
     from: noreply@whisper.com
   client:
     host: http://localhost:5173
-  token-type: opaque
+  token-type: jwt
 

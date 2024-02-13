@@ -16,6 +16,7 @@ export function useUserDeleteButton(){
             try{
                 await deleteUser(userId)
                 dispatch({type: 'logout-success'});
+                navigate("/")
             }catch{
     
             }finally{

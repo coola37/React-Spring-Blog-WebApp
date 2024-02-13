@@ -1,6 +1,6 @@
 package com.whisper.ws.auth.service;
 
-import com.whisper.ws.auth.Credentials;
+import com.whisper.ws.auth.token.Credentials;
 import com.whisper.ws.auth.token.Token;
 import com.whisper.ws.user.repository.entity.*;
 import org.springframework.stereotype.Service;

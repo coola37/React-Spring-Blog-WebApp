@@ -1,13 +1,11 @@
 package com.whisper.ws.auth.service;
 
-import com.whisper.ws.auth.Credentials;
-import com.whisper.ws.auth.service.TokenService;
+import com.whisper.ws.auth.token.Credentials;
 import com.whisper.ws.auth.token.Token;
 import com.whisper.ws.user.repository.entity.User;
 import com.whisper.ws.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

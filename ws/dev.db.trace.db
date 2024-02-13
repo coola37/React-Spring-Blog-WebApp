@@ -1,52 +1,60 @@
-2024-02-12 20:28:40 jdbc[3]: exception
+2024-02-13 23:19:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table comments (comment_id varchar(255) not null, body varchar(255), [*]like integer not null, post_id varchar(255), sender_id bigint not null, sender_profile_img varchar(255), sender_username varchar(255), primary key (comment_id))"; expected "identifier"; SQL statement:
+create table comments (comment_id varchar(255) not null, body varchar(255), like integer not null, post_id varchar(255), sender_id bigint not null, sender_profile_img varchar(255), sender_username varchar(255), primary key (comment_id)) [42001-214]
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:40 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:40 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:40 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:40 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:41 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
-2024-02-12 20:28:42 jdbc[3]: exception
+2024-02-13 23:19:19 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-02-13 23:21:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-02-13 23:37:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table comments (comment_id varchar(255) not null, body varchar(255), [*]like integer not null, post_id varchar(255), sender_id bigint not null, sender_profile_img varchar(255), sender_username varchar(255), primary key (comment_id))"; expected "identifier"; SQL statement:
+create table comments (comment_id varchar(255) not null, body varchar(255), like integer not null, post_id varchar(255), sender_id bigint not null, sender_profile_img varchar(255), sender_username varchar(255), primary key (comment_id)) [42001-214]

@@ -5,6 +5,7 @@ import App from '@/App.jsx';
 import { Activation } from '@/pages/activation/index.jsx';
 import { User } from '@/pages/user';
 import { Login } from '@/pages/Login';
+import { Post } from '@/pages/post';
 
 export default createBrowserRouter([
    {
@@ -31,6 +32,10 @@ export default createBrowserRouter([
       {
         path: '/login',
         Component: Login
+      },
+      {
+        path: '/post/:id',
+        Component: Post
       }
     ]
    }

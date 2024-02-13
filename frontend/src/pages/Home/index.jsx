@@ -1,5 +1,6 @@
-import { UserList } from "./components/userList";
+import { PostList } from "./components/postList";
+
 
 export function Home(){
-    return <UserList/>
+    return <PostList/>
 }

@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { Spinner } from "@/shared/components/spinner";
-import { UserListItem } from "./userListItem";
-import { loadUsers } from "../api";
+import { PostListItem } from "./postListItem";
+import { loadPosts } from "../api";
 
 
-export function UserList() {
-  const [userPage, setUserPage] = useState({
+export function PostList() {
+  const [postPage, setPostPage] = useState({
     content: [],
     last: false,
     first: false,
@@ -14,11 +14,11 @@ export function UserList() {
 
   const [apiProgress, setApiProgress] = useState(false);
 
-  const fetchUsers = useCallback(async (page) => {
+  const fetchPosts = useCallback(async (page) => {
     setApiProgress(true);
     try {
-      const response = await loadUsers(page);
-      setUserPage(response.data);
+      const response = await loadPosts(page);
+      setPostPage(response.data);
     } catch {
     } finally {
       setApiProgress(false);
@@ -26,33 +26,33 @@ export function UserList() {
   }, []);
 
   useEffect(() => {
-    fetchUsers();
+    fetchPosts();
   }, []);
 
   return (
     <>
-      <div className="card">
-        <div className="card-header text-center fs-4">User List</div>
+      <div className="card text-bg-dark mb-3">
+        <div className="card-header text-center fs-4">Posts</div>
         <ul className="list-group list-group-flush">
-          {userPage.content.map((user) => {
-            return <UserListItem key={user.userId} user={user}/>;
+          {postPage.content.map((post) => {
+            return <PostListItem key={post.postId} post={post}/>;
           })}
         </ul>
 
         <div className="card-footer text-center">
           {apiProgress && <Spinner />}
-          {!apiProgress && !userPage.first && (
+          {!apiProgress && !postPage.first && (
             <button
               className="btn btn-outline-secondary btn-sm float-start"
-              onClick={() => fetchUsers(userPage.number - 1)}
+              onClick={() => fetchPosts(postPage.number - 1)}
             >
               Previous
             </button>
           )}
-          {!apiProgress && !userPage.last && (
+          {!apiProgress && !postPage.last && (
             <button
               className="btn btn-outline-secondary btn-sm float-end"
-              onClick={() => fetchUsers(userPage.number + 1)}
+              onClick={() => fetchPosts(postPage.number + 1)}
             >
               Next
             </button>

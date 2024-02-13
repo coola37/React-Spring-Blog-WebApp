@@ -25,7 +25,7 @@ export function NavBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand bg-body-tertiary shadow-sm">
+    <nav className="navbar navbar-expand bg-body-tertiary shadow-sm" data-bs-theme="dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src={logo} width={60} />

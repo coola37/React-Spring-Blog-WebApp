@@ -1,4 +1,4 @@
-package com.whisper.ws.user.dto;
+package com.whisper.ws.user.response.dto;
 
 import com.whisper.ws.user.repository.entity.*;
 //@AllArgsConstructor

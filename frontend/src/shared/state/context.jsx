@@ -17,7 +17,7 @@ const authReducer = (authState, action) => {
   
   console.log(authState)
   switch (action.type) {
-    case "login-succes": 
+    case "login-success": 
       return action.data.user;
     case "logout-success":
       return { userId: 0 };

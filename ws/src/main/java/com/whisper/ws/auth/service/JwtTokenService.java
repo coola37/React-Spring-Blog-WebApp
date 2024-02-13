@@ -2,19 +2,15 @@ package com.whisper.ws.auth.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.whisper.ws.auth.Credentials;
-import com.whisper.ws.auth.service.TokenService;
+import com.whisper.ws.auth.token.Credentials;
 import com.whisper.ws.auth.token.Token;
 import com.whisper.ws.user.repository.entity.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
-
-import static org.aspectj.util.LangUtil.split;
 
 @Service
 @ConditionalOnProperty(name = "whisper.token-type", havingValue = "jwt")

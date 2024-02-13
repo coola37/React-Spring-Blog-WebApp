@@ -2,8 +2,7 @@ package com.whisper.ws.user.service;
 
 import com.whisper.ws.FileService;
 import com.whisper.ws.user.configuration.CurrentUser;
-import com.whisper.ws.user.dto.UserDTO;
-import com.whisper.ws.user.dto.UserUpdate;
+import com.whisper.ws.user.response.dto.UserUpdate;
 import com.whisper.ws.user.email.EmailService;
 import com.whisper.ws.user.exceptions.ActivationNotificationException;
 import com.whisper.ws.user.exceptions.InvalidTokenException;
@@ -16,13 +15,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.mail.MailException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
 import java.util.UUID;
 
 @Service

@@ -6,6 +6,7 @@ import { login as test } from "./api";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginSucces } from "@/shared/state/redux";
+import { useAuthDispatch } from "@/shared/state/context";
 
 export function Login() {
   const [email, setEmail] = useState();
@@ -14,7 +15,7 @@ export function Login() {
   const [errors, setErrors] = useState({});
   const [generalError, setGeneralError] = useState();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAuthDispatch();
 
   useEffect(() => {
     setErrors(function (lastErrors) {
@@ -40,11 +41,8 @@ export function Login() {
     setApiProgress(true);
 
     try {
-      const response = await test({ email: email, password: password });
-       
-      //setToken(response.data.token)
-       
-      dispatch(loginSucces(response.data));
+      const response = await test({ email: email, password: password });      
+      dispatch({type: 'login-success', data: response.data});
       navigate("/")
     }catch (axiosError) {
       if (axiosError.response?.data) {
