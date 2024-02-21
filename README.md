@@ -1,4 +1,4 @@
-#Purpose
+# Purpose
 <p>Whisper is a blog site that helps you get answers to your questions from others when you need help with something. Developed using React.js on the frontend and Java Spring on the backend.</p>
 
 ## Tools and Libraries
