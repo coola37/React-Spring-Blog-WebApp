@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getComments } from "./api";
+import { getComments, postComment } from "./api";
 import { CommentListItem } from "./commentListItem";
 import { Input } from "@/shared/components/Input";
 import { Button } from "@/shared/components/button";
@@ -12,6 +12,8 @@ export function CommentList({ id }) {
     number: 0,
   });
   const [apiProgress, setApiProgress] = useState(false);
+  const [body, setBody] = useState();
+  const [postId, setPostId] = useState("");
 
   const getData = useCallback(async () => {
     setApiProgress(true);
@@ -28,7 +30,25 @@ export function CommentList({ id }) {
 
   useEffect(() => {
     getData();
-  }, [getData]); // Only re-run the effect if getData changes
+  }, [getData]);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setApiProgress(true);
+    setPostId(id);
+    console.log(postId);
+    try {
+      const response = postComment({
+        postId: id,
+        body
+      });
+    } catch (error) {
+      
+    }finally{
+      setApiProgress(false);
+      setBody("");
+    }
+  }
 
   return (
     <div className="">
@@ -39,12 +59,12 @@ export function CommentList({ id }) {
         })}
       </ul>
       <form>
-        <label>Feedback</label>
         <Input id="commentBody"
-              label=""
+              label="Feedback"
               type="text"
+              onChange={(event) => setBody(event.target.value)}
         />
-        <Button>Send</Button>
+        <Button onClick={onSubmit}>Send</Button>
       </form>
     </div>
   );

@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: whisper-web-service
+  profiles:
+    active: localhost
+  main:
+    allow-bean-definition-overriding: true
+info:
+  component: Whisper Web Service
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: localhost
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:h2:file:./dev.db
+    username: sa
+    password: 
+    generate-unique-name: false
+server:
+    port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+
+whisper:
+  storage:
+    root: uploads-dev
+  email:
+    username: haven.orn30@ethereal.email
+    password: ZA9treG2f9HC5FSwH6
+    host: smtp.ethereal.email
+    port: 587
+    from: noreply@whisper.com
+  client:
+    host: http://localhost:5173
+  token-type: opaque
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+---
+spring:
+  config:
+    activate:
+      on-profile: stage
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:h2:file:./dev.db
+    username: sa
+    password:
+    generate-unique-name: false
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    instance-id: ${spring.application.name}:${random.uuid}

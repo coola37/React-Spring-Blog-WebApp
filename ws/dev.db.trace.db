@@ -353,3 +353,12 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/ygtku/O
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 145 more
+2024-02-21 15:14:48 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "BODY CHARACTER VARYING(255)": "'I''m working on a project where we''ve created a module that wraps around a thi... (264)"; SQL statement:
+insert into posts (body,sender_id,title,post_id) values (?,?,?,?) [22001-214]
+2024-02-21 15:19:36 jdbc[35]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "BODY CHARACTER VARYING(255)": "'''m attempting to send an API request in Power Automate Desktop. I''ve tested i... (324)"; SQL statement:
+insert into posts (body,sender_id,title,post_id) values (?,?,?,?) [22001-214]
+2024-02-21 15:20:25 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "BODY CHARACTER VARYING(255)": "'So, I want to have a set of config files and data files which need to be access... (268)"; SQL statement:
+insert into posts (body,sender_id,title,post_id) values (?,?,?,?) [22001-214]

@@ -3,6 +3,7 @@ import { Spinner } from "@/shared/components/spinner";
 import { PostListItem } from "./postListItem";
 import { loadPosts } from "../api";
 import { Button } from "@/shared/components/button";
+import { useNavigate } from "react-router-dom";
 
 
 export function PostList() {
@@ -14,6 +15,7 @@ export function PostList() {
   });
 
   const [apiProgress, setApiProgress] = useState(false);
+  const navigate = useNavigate();
 
   const fetchPosts = useCallback(async (page) => {
     setApiProgress(true);
@@ -30,12 +32,17 @@ export function PostList() {
     fetchPosts();
   }, []);
 
+  function navigateSend(){
+    navigate("/send")
+  }
   return (
     <>
       <div className="card text-bg mb-3">
         <div className="card-header text-center fs-4">
           <label className="text-start">Question</label>  
-          <button className="btn btn-outline-primary btn-sm float-end">Ask Question</button>
+          <button className="btn btn-outline-primary btn-sm float-end" 
+          onClick={() => navigateSend()}
+          >Ask Question</button>
         </div>
         
         <ul className="list-group list-group-flush">

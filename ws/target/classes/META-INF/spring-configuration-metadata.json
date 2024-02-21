@@ -59,12 +59,14 @@
     {
       "name": "whisper.storage.profile",
       "type": "java.lang.String",
-      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Storage"
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Storage",
+      "defaultValue": "profile"
     },
     {
       "name": "whisper.storage.root",
       "type": "java.lang.String",
-      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Storage"
+      "sourceType": "com.whisper.ws.user.configuration.WhisperProperties$Storage",
+      "defaultValue": "uploads"
     },
     {
       "name": "whisper.token-type",
