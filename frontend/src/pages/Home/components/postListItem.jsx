@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function PostListItem({ post }) {
   return (
     <Link
-      className="list-group-item list-group-item-action list-group-item-dark"
+      className="list-group-item list-group-item-action list-group-item"
       to={`/post/${post.postId}`}
       style={{ textDecoration: "none" }}
     >
@@ -12,7 +12,3 @@ export function PostListItem({ post }) {
     </Link>
   );
 }
-/*
-  <a href="#" class="">A simple light list group item</a>
-
-*/

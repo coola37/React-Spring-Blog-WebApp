@@ -1,6 +1,6 @@
 package com.whisper.ws.post.service;
 
-import com.whisper.ws.post.repository.entity.Post;
+import com.whisper.ws.post.entity.Post;
 import com.whisper.ws.user.shared.GenericMessage;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

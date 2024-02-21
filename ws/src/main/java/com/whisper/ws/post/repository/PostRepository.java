@@ -1,6 +1,6 @@
 package com.whisper.ws.post.repository;
 
-import com.whisper.ws.post.repository.entity.Post;
+import com.whisper.ws.post.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -6,6 +6,7 @@ import { Activation } from '@/pages/activation/index.jsx';
 import { User } from '@/pages/user';
 import { Login } from '@/pages/Login';
 import { Post } from '@/pages/post';
+import { SendPost } from '@/pages/sendPost';
 
 export default createBrowserRouter([
    {
@@ -36,6 +37,10 @@ export default createBrowserRouter([
       {
         path: '/post/:id',
         Component: Post
+      },
+      {
+        path: '/send',
+        Component: SendPost
       }
     ]
    }

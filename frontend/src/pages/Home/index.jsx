@@ -1,6 +1,15 @@
+import { Button } from "@/shared/components/button";
 import { PostList } from "./components/postList";
+import { Input } from "@/shared/components/Input";
 
 
 export function Home(){
-    return <PostList/>
+    return (
+        <div>
+            <div>
+            <PostList/>
+            </div>
+            
+        </div>
+    );
 }

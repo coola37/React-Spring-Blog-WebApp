@@ -1,4 +1,19 @@
 spring:
+  application:
+    name: whisper-web-service
+  profiles:
+    active: localhost
+  main:
+    allow-bean-definition-overriding: true
+info:
+  component: Product Service
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: localhost
   jpa:
     hibernate:
       ddl-auto: update
@@ -28,5 +43,35 @@ whisper:
     from: noreply@whisper.com
   client:
     host: http://localhost:5173
-  token-type: jwt
+  token-type: opaque
 
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+---
+spring:
+  config:
+    activate:
+      on-profile: stage
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:h2:file:./dev.db
+    username: sa
+    password:
+    generate-unique-name: false
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    instance-id: ${spring.application.name}:${random.uuid}

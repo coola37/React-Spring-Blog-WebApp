@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Spinner } from "@/shared/components/spinner";
 import { PostListItem } from "./postListItem";
 import { loadPosts } from "../api";
+import { Button } from "@/shared/components/button";
 
 
 export function PostList() {
@@ -31,8 +32,12 @@ export function PostList() {
 
   return (
     <>
-      <div className="card text-bg-dark mb-3">
-        <div className="card-header text-center fs-4">Posts</div>
+      <div className="card text-bg mb-3">
+        <div className="card-header text-center fs-4">
+          <label className="text-start">Question</label>  
+          <button className="btn btn-outline-primary btn-sm float-end">Ask Question</button>
+        </div>
+        
         <ul className="list-group list-group-flush">
           {postPage.content.map((post) => {
             return <PostListItem key={post.postId} post={post}/>;

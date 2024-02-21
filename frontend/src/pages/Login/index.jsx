@@ -81,9 +81,6 @@ export function Login() {
               type="password"
             />
 
-            {
-              //{successMessage && <Alert>{successMessage}</Alert>}
-            }
             {generalError && <Alert styleType="danger">{generalError}</Alert>}
             <div className="text-center">
               <Button disabled={!password || !email} apiProgress={apiProgress}>
